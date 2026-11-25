@@ -2,6 +2,7 @@
 
 [![LabVIEW](https://img.shields.io/badge/Platform-NI%20LabVIEW-F0C000?style=for-the-badge&logo=nationalinstruments&logoColor=black)](https://www.ni.com/en-us/shop/labview.html)
 [![Projects](https://img.shields.io/badge/VIs-40%20Programs-blue?style=for-the-badge)](#-catalog-of-vis)
+[![Documentation](https://img.shields.io/badge/Guide-SDP%20Steps-brightgreen?style=for-the-badge)](#-labview-quickstart--sdp-guide)
 [![Status](https://img.shields.io/badge/Status-Active%20Practice-success?style=for-the-badge)](#)
 
 A comprehensive collection of National Instruments **LabVIEW** Virtual Instruments (`.vi`) developed for learning and experimenting with graphical programming (G code). This repository covers foundational logic, algorithmic problem solving, hardware emulation, signal generation, audio processing, File I/O, and interactive mini-games.
@@ -21,8 +22,10 @@ A comprehensive collection of National Instruments **LabVIEW** Virtual Instrumen
   - [6. Audio & Speech Processing](#6-audio--speech-processing)
   - [7. Interactive Games & GUI Applications](#7-interactive-games--gui-applications)
   - [8. Introductory Experiments](#8-introductory-experiments)
+- [LabVIEW Quickstart & SDP Guide](#-labview-quickstart--sdp-guide)
 - [Requirements & Getting Started](#-requirements--getting-started)
 - [Repository Structure](#-repository-structure)
+- [Contributing & License](#-contributing--license)
 
 ---
 
@@ -31,7 +34,7 @@ A comprehensive collection of National Instruments **LabVIEW** Virtual Instrumen
 LabVIEW (Laboratory Virtual Instrument Engineering Workbench) is a systems engineering software designed for test, measurement, and control. This repository tracks hands-on practice modules covering:
 
 - **Graphical Dataflow**: Wires, data types, structures, and execution flow.
-- **SubVIs & Modularity**: Creating reusable sub-routines (e.g., factorial calculator).
+- **SubVIs & Modularity**: Creating reusable sub-routines (e.g., factorial calculator, adders).
 - **Signal Analysis**: Waveform synthesis, charting, and multi-channel signals.
 - **Multimedia Integration**: Audio acquisition, real-time feedback, and speech synthesis.
 - **Data Persistence**: CSV, plain text, and binary read/write pipelines.
@@ -114,12 +117,52 @@ Front panel interactivity and playful applications:
 
 ---
 
+## 📖 LabVIEW Quickstart & SDP Guide
+
+A reference workflow based on [`LABVIEW_SDP_Steps.docx`](file:///d:/LabVIEW-practice/LABVIEW_SDP_Steps.docx) outlining essential steps for creating, wiring, running, and configuring Virtual Instruments and SubVIs:
+
+1. **Create a New VI**
+   - Open LabVIEW.
+   - Go to **File → New VI** (`Ctrl + N`).
+   - Press `Ctrl + T` to tile the **Front Panel** and **Block Diagram** side-by-side.
+
+2. **Build the Front Panel (UI)**
+   - Right-click on the Front Panel → **Numeric** → **Control** to place inputs.
+   - Add two numeric controls for user input.
+   - Right-click → **Numeric** → **Indicator** to add a numeric display for output.
+
+3. **Build the Block Diagram (Logic & Wiring)**
+   - Switch to the Block Diagram (`Ctrl + E`).
+   - Right-click → **Numeric** → choose the required function (e.g., Add, Subtract, Multiply).
+   - Wire: **Controls → Function → Indicator**.
+
+4. **Run the VI**
+   - Switch to the Front Panel.
+   - Click **Run** (`Ctrl + R`).
+   - Enter values in the numeric controls and inspect the calculated result on the indicator.
+
+5. **Continuous Input While Running**
+   - Click **Run Continuously** (curved arrows icon).
+   - Adjust control values in real time on the Front Panel; the indicator updates live on each cycle.
+
+6. **Change Data Representation**
+   - Right-click any numeric control or indicator → **Representation**.
+   - Select the required precision: Integer (`I8`, `I16`, `I32`, `I64`), Floating-Point (`SGL`, `DBL`, `EXT`), or Unsigned (`U8`, `U16`, `U32`).
+
+7. **Icon & Connector Pins (SubVI Creation)**
+   - Right-click the VI icon in the upper-right corner of the window → **Show Connector**.
+   - Click on terminal blocks and map them to corresponding Front Panel controls (inputs) and indicators (outputs).
+   - Double-click the icon to open the **Icon Editor** and customize its graphical appearance.
+
+---
+
 ## 🛠️ Requirements & Getting Started
 
 ### Prerequisites
 - **National Instruments LabVIEW** (2018 or newer recommended, Base, Full, or Professional Development System).
 - Windows OS (recommended for sound API and ActiveX/COM `.NET` speech dependencies).
 - Audio input/output devices (Microphone & Speakers) for audio and piano VIs.
+- Microsoft Word or compatible reader for [`LABVIEW_SDP_Steps.docx`](file:///d:/LabVIEW-practice/LABVIEW_SDP_Steps.docx).
 
 ### How to Run
 1. **Clone the repository**:
@@ -140,6 +183,10 @@ Front panel interactivity and playful applications:
 
 ```text
 LabVIEW-practice/
+│
+├── 📄 LABVIEW_SDP_Steps.docx                  # LabVIEW step-by-step practical development guide
+├── 📄 cSv.csv                                 # Sample exported sine waveform data
+├── 📄 README.md                               # Project documentation & index
 │
 ├── 📁 Digital Logic & Circuits
 │   ├── 7 segment display.vi
@@ -168,7 +215,6 @@ LabVIEW-practice/
 │   ├── csv file.vi
 │   ├── csv read.vi
 │   ├── csv write.vi
-│   ├── cSv.csv
 │   ├── FILE ONLY READ.vi
 │   ├── file read and write.vi
 │   ├── read binary.vi
@@ -190,14 +236,12 @@ LabVIEW-practice/
 │   ├── catch me if u can.vi
 │   └── piano.vi
 │
-├── 📁 Introductory VIs
-│   ├── Untitled 1.vi
-│   ├── Untitled 2.vi
-│   ├── Untitled 3.vi
-│   ├── Untitled 4.vi
-│   └── Untitled 5.vi
-│
-└── README.md
+└── 📁 Introductory VIs
+    ├── Untitled 1.vi
+    ├── Untitled 2.vi
+    ├── Untitled 3.vi
+    ├── Untitled 4.vi
+    └── Untitled 5.vi
 ```
 
 ---
@@ -205,7 +249,5 @@ LabVIEW-practice/
 ## 🤝 Contributing & License
 
 Contributions, improvements, and additional sample VIs are welcome! Feel free to fork the repository, file issues, or submit pull requests.
-
-
 
 ## **The CHASE continues**
