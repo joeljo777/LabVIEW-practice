@@ -208,4 +208,4 @@ Contributions, improvements, and additional sample VIs are welcome! Feel free to
 
 
 
-## **The CHASE continues 
+## **The CHASE continues**
