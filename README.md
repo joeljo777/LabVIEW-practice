@@ -205,3 +205,7 @@ LabVIEW-practice/
 ## 🤝 Contributing & License
 
 Contributions, improvements, and additional sample VIs are welcome! Feel free to fork the repository, file issues, or submit pull requests.
+
+
+
+## **The CHASE continues 
